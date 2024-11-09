@@ -71,6 +71,21 @@ font-size: 17px;
 padding: 12px 8px 12px 50px;
 user-select: none;
 cursor: pointer;
+span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    &:hover{
+        background: #f3f3f3;
+    }
+}
 
         &::before{
 content: '';
@@ -90,7 +105,7 @@ left: 16px;
             text-decoration: line-through;
             &::before{
 color: #666;
-background: url('./images/checked.png');
+background-image: url('./images/checked.png');
             }
 
         }
