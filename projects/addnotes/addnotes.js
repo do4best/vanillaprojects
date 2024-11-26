@@ -1,3 +1,12 @@
+function getColor(){
+    let letters='ABCDEF1234567890';
+let color ="#";
+for(let i=0; i<6; i++){
+    color += letters[ Math.floor(Math.random()*i)]
+}
+return color;
+}
+
 const addBtn = document.querySelector("#addBtn")// select the id addBtn
 const main = document.querySelector("#main") // select maid id for display the items 
 addBtn.addEventListener("click",addNote)// as the id button wil show to the left top it should be listening the event listner
