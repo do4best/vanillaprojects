@@ -31,12 +31,12 @@ return item;
 
 }
 const reverseString=(str)=>{
-    let que = new Queue()
-    for(let i=str.length-1;i>=0;i--){
+    let que = new Queue();
+    for(let i=str.length - 1; i >= 0; i--){
         que.enque(str[i])}
         let reverse='';
         while(!que.isEmpty()){
-            reverse += que.deque()
+            reverse += que.deque();
         }
         return reverse;
 }
@@ -49,4 +49,4 @@ display(que)
 que.deque()
 display(que)
 display(que.peek())
-display(reverseString("Friend"))
+console.log(reverseString("Friend"))
