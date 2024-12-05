@@ -1,8 +1,11 @@
+
+
 class Node{
-constructor(data){
-    this.data = data;
-    this.next = null;
-}
+    constructor(data){
+        this.data = data;
+        this.next = null;
+    }
+
 }
 class LinkedList{
     constructor(){
@@ -18,17 +21,16 @@ class LinkedList{
         }
         this.tail = node;
     }
-    printAll(){
-        let current = this.head;
-        while(current != null){
-            console.log(current.data);
-            current = current.next;
+    printit(){ 
+        let current = this.head; // mark the head
+       
+        while(current != null){ // make a condation on current if not null
+            console.log(current.data); // print current data
+            current = current.next; // point to the next one
         }
     }
-
 }
-let node1 = new LinkedList();
-node1.add(200)
-node1.add(400)
-node1.add(600)
-node1.printAll()
+let linked = new LinkedList();
+linked.add("Find")
+linked.add("What")
+linked.printit()
