@@ -44,3 +44,16 @@ console.log(stack)
 stack.remove()
 console.log(stack)
 console.log(stack.peek())
+const reversString=(str)=>{
+    let astring = str.length;
+    let stack = new Stack();
+    for(let i=0; i<astring; i++){
+        stack.add(str[i])
+    }
+    let revers="";
+    while(!stack.isEmpty()){
+        revers += stack.remove();
+    }
+    return revers
+}
+console.log(reversString("Hello Friend"))
