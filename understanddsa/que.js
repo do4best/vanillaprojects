@@ -3,39 +3,42 @@ class Que{
         this.que = [];
         this.head = 0;
         this.tail = 0;
-        this.maxSize = 100;
+        this.maxsize = 100;
     }
-    enque(enq){
+    enque(value){
         if(this.isFull()){
             return false;
         }
-        this.que[this.tail] = enq;
+        this.que[this.tail] = value;
         this.tail++;
         return true;
-
     }
-    isFull(){
-        return this.getLength() === this.maxSize;
+    deque(){
+        const item = this.que[this.head]
+        this.head++;
+        return item;
+    }
+    isEmpty(){
+        return this.getLength() === 0;
     }
     getLength(){
         return this.tail - this.head;
     }
-    isEmpty(){
-        return this.getLength(); 
-    }
-    deque(){
-        const item = this.que[this.head];
-        this.head++;
-        return item;
+    isFull(){
+        return this.getLength() === this.maxsize;
+
     }
     peek(){
-        return this.que[this.head];
+        return this.que[this.head]
     }
 }
 let que = new Que();
-que.enque("Friend")
-que.enque("is")
-que.enque("Here")
+que.enque("Me")
+que.enque("against")
+que.enque("the")
+que.enque("Machine")
 console.log(que)
-console.log(que.deque())
+console.log(que.peek())
+que.deque()
+console.log(que)
 console.log(que.peek())
