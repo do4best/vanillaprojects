@@ -1,4 +1,4 @@
-function sumit(a,b){
-    return a + b;
+function sumit(sumit){
+    return sumit.reduce((a,b) => a+b, 0);
 }
 module.exports = sumit
