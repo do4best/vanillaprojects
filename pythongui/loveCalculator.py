@@ -8,6 +8,8 @@ def love_calculate():
     digit=2
     temp = "".join(random.sample(st,digit))
     result.config(text=temp)
+    random_color = "#{:06x}".format(random.randint(0, 0xFFFFFF))
+    root.config(bg=random_color)
     
 heading = Label(root,text="Love Calculate ???")
 heading.pack()
