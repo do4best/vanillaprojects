@@ -4,13 +4,19 @@ function MainScissorProject() {
     const [rock,setRock] = useState<string>(" Rock")
     const [paper,setPaper] = useState<string>(" Paper")
     const [scissor,setScissor] = useState<string>(" Scissor")
+    function computerPlay():string{
+        const  choices = ["rock","paper","scissor"]
+        const randomChoice = Math.floor(Math.random() * choices.length)
+        return choices[randomChoice]
+
+    }
     const handleClick=(choice:string) :void =>{
         if(choice === "Rock"){
-            console.log("You pressed" + rock)
+            console.log("You pressed" + rock + " computer Choices " + computerPlay())
         }else if(choice === "Paper"){
-            console.log("You pressed " + paper)
+            console.log("You pressed " + paper + " computer Choices " + computerPlay())
         }else if(choice === "Scissor"){
-            console.log("You Pressed" + scissor)
+            console.log("You Pressed" + scissor + " computer Choices " + computerPlay())
         }
     };
     return (  <>
