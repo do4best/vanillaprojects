@@ -1,22 +1,33 @@
 import { useState } from "react";
 
 function MainScissorProject() {
-    const [rock,setRock] = useState<string>(" Rock")
-    const [paper,setPaper] = useState<string>(" Paper")
-    const [scissor,setScissor] = useState<string>(" Scissor")
+    const [rock,setRock] = useState<string>(" ")
+    const [paper,setPaper] = useState<string>(" ")
+    const [scissor,setScissor] = useState<string>(" ")
     function computerPlay():string{
         const  choices = ["rock","paper","scissor"]
         const randomChoice = Math.floor(Math.random() * choices.length)
         return choices[randomChoice]
 
     }
+    function playRound(playerSelection:string,computerSelection:string):string{
+        if(playerSelection === computerSelection){
+            return " It is a Tie"
+        }else if( (playerSelection === "rock" && computerSelection === "scissors") || (playerSelection === "paper" && computerSelection === "rock") || (playerSelection === "scissor" && computerSelection === "paper")){
+            return " You win " + playerSelection + " beats" + computerSelection;
+        }else{
+            return "You Lose " + computerSelection + " beats" + playerSelection
+        }
+    }
     const handleClick=(choice:string) :void =>{
         if(choice === "Rock"){
-            console.log("You pressed" + rock + " computer Choices " + computerPlay())
+            setRock(playRound( rock, computerPlay()))
+           
         }else if(choice === "Paper"){
-            console.log("You pressed " + paper + " computer Choices " + computerPlay())
+            setRock("")
+            setPaper(playRound(paper, computerPlay()))
         }else if(choice === "Scissor"){
-            console.log("You Pressed" + scissor + " computer Choices " + computerPlay())
+            setScissor(playRound(scissor,computerPlay()))
         }
     };
     return (  <>
@@ -29,7 +40,7 @@ function MainScissorProject() {
             <button onClick={()=>handleClick("Scissor")} className="btn btn-lg btn-success">&#x270c;</button>
         </div>
         <p>You Won</p>
-        <p>Your Score <span>0</span> Computer Score : <span>0</span></p>
+        <p className="text-2xl text-red-400">Your Score <span>{paper}, {rock}, {scissor}</span> Computer Score : <span>0</span></p>
     </div>
     
     </>);
