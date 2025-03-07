@@ -3,8 +3,9 @@ import { useState } from "react";
 function MainScissorProject() {
     
     const [user,setUser] = useState<string>("")
-    let [userScore,setUserScore] = useState<number>(0)
-    let [computerScore,setComputerScore] = useState<number>(0)
+    const [userScore,setUserScore] = useState<number>(0)
+    const [computerScore,setComputerScore] = useState<number>(0)
+    const [playit,setPlayit] = useState<boolean>(false)
     function computerPlay():string{
         const  choices = ["rock","paper","scissor"]
         const randomChoice = Math.floor(Math.random() * choices.length)
@@ -57,6 +58,7 @@ function MainScissorProject() {
         // }
     };
     return (  <>
+    
     <div style={{backgroundColor:"#f1f1f1",color:"black"}} className="h-200 w-200 shadow-2xl shadow-amber-500">
         <h1>Rock Paper Scissors Game</h1>
         <p>Choose Your Move:</p>
