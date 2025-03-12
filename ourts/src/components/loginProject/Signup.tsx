@@ -1,13 +1,19 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Signup() {
     const [name,setName] = useState<string>("")
     const [email,setEmail] = useState<string>("")
     const [password,setPassword] = useState<string>("")
+    const navigate = useNavigate()
     const handleSubmit=(e:React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault()
-        axios.post('https://localhost:3001/register',{name,email,password}).then(result=>console.log(result)).catch(err=>console.log(err))
+        try{ axios.post('http://localhost:3001/register',{name,email,password}).then(find=>console.log(find))
+        navigate('/login')
+    }catch(err){
+        console.log(err)
+    }
     }
     return ( <>
      <div className="m-auto flex justify-center h-110 shadow-lg shadow-blue-500">

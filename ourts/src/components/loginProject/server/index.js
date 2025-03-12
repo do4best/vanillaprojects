@@ -8,7 +8,7 @@ app.use(express.json())
 app.use(cors())
 mongoose.connect("mongodb://127.0.0.1:27017/myemployee");
 app.post('/register',(req,res)=>{
-EmployeeModel.create(req.body).then(employee =>res.json(employee)).catch(err=>req.json(err))    
+EmployeeModel.create(req.body).then(myemployees =>res.json(myemployees)).catch(err=>req.json(err))    
 })
 app.listen(3001,()=>{
     console.log("We are listeneing")

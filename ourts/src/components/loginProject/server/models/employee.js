@@ -6,6 +6,6 @@ const EmployeeSchema = new mongoose.Schema({
     password:String
 })
 
-const EmployeeModel = mongoose.model("myemployee",EmployeeSchema)
+const EmployeeModel = mongoose.model("myemployees",EmployeeSchema)
 
 export {EmployeeModel}
